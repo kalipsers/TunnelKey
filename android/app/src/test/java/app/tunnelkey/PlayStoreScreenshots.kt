@@ -39,12 +39,13 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.robolectric.RuntimeEnvironment
 import org.robolectric.annotation.Config
 import org.robolectric.annotation.GraphicsMode
 
 /**
  * Renders the Google Play screenshots from the real screens with demo data.
- * Only runs with:  ./gradlew :app:testDebugUnitTest -PplayScreenshots --tests '*PlayStoreScreenshots*'
+ * Only runs with:  ./gradlew :app:testDebugUnitTest -PplayScreenshots [-PplayLocale=sk] --tests '*PlayStoreScreenshots*'
  * Output: docs/play-store/screens-raw/  (framed by docs/play-store/make_graphics.py)
  */
 @RunWith(AndroidJUnit4::class)
@@ -54,9 +55,14 @@ class PlayStoreScreenshots {
 
     @get:Rule val compose = createComposeRule()
 
-    private val dir get() = System.getProperty("screenshotDir")!!
+    private val locale get() = System.getProperty("playLocale") ?: "en-US"
+    private val dir get() = System.getProperty("screenshotDir")!! + "/" + locale
 
-    @Before fun onlyWhenRequested() = assumeTrue(System.getProperty("playScreenshots") == "true")
+    @Before fun onlyWhenRequested() {
+        assumeTrue(System.getProperty("playScreenshots") == "true")
+        // -PplayLocale=sk renders the Slovak UI.
+        if (locale != "en-US") RuntimeEnvironment.setQualifiers("+${locale.substringBefore('-')}")
+    }
 
     private fun screen(content: @Composable () -> Unit) = compose.setContent {
         TunnelkeyTheme(dark = true) {
@@ -114,7 +120,7 @@ class PlayStoreScreenshots {
                 onSubmit = { _, _ -> }, onDismiss = {},
             )
         }
-        compose.onNode(hasContentDescription("Authenticator code")).performTextInput("4829")
+        compose.onNode(hasContentDescription(if (locale == "sk") "Overovací kód" else "Authenticator code")).performTextInput("4829")
         compose.waitForIdle()
         captureScreenRoboImage("$dir/2_sign_in.png")
     }

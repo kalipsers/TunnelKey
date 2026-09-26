@@ -230,7 +230,9 @@ YouTube) and paste the link.
 ## Regenerating the graphics
 
 ```bash
-cd android && ./gradlew :app:testDebugUnitTest -PplayScreenshots --tests '*PlayStoreScreenshots*'
+cd android
+./gradlew :app:testDebugUnitTest -PplayScreenshots --tests '*PlayStoreScreenshots*'
+./gradlew :app:testDebugUnitTest -PplayScreenshots -PplayLocale=sk --tests '*PlayStoreScreenshots*'
 cd .. && python docs/play-store/make_graphics.py
 ```
 

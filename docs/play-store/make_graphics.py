@@ -1,7 +1,8 @@
 """Builds the Google Play graphics from the rendered app screens.
 
-    1. Render the screens (real Compose UI, demo data):
+    1. Render the screens (real Compose UI, demo data), once per language:
          cd android && ./gradlew :app:testDebugUnitTest -PplayScreenshots --tests '*PlayStoreScreenshots*'
+         cd android && ./gradlew :app:testDebugUnitTest -PplayScreenshots -PplayLocale=sk --tests '*PlayStoreScreenshots*'
     2. python docs/play-store/make_graphics.py
 
 Writes into fastlane/metadata/android/<locale>/images/:
@@ -154,9 +155,11 @@ def feature_graphic(raw, tagline):
 
 
 def main():
-    raws = {name: Image.open(RAW / f"{name}.png").convert("RGB") for name in SCREENS}
     icon = Image.open(ICON_SRC).convert("RGBA").resize((512, 512), Image.LANCZOS)
     for locale, captions in CAPTIONS.items():
+        # Screens rendered in that language (-PplayLocale=<locale>), else English.
+        src = RAW / locale if (RAW / locale).is_dir() else RAW / "en-US"
+        raws = {name: Image.open(src / f"{name}.png").convert("RGB") for name in SCREENS}
         images = META / locale / "images"
         (images / "phoneScreenshots").mkdir(parents=True, exist_ok=True)
         icon.save(images / "icon.png")
