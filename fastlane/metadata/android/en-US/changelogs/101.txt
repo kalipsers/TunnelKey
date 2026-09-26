@@ -1,0 +1,6 @@
+First release:
+• OpenVPN client with password + authenticator code (TOTP) sign-in
+• Setup by QR code with single-configuration mode, on-device 2FA codes and links
+• Fingerprint/face or strong 8-digit PIN lock
+• Automatic retry with the next code when a code is rejected
+• English and Slovak
