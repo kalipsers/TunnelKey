@@ -188,7 +188,7 @@ The app declares `FOREGROUND_SERVICE_SPECIAL_USE` for the VPN service
 
 Video: record 20–30 s of the phone screen (Android's built-in screen recorder):
 tap Connect → **Allow** notifications → accept the VPN dialog → pull down the
-notification shade to show "VPN connected" (in the *Silent* section) with
+notification shade to show "VPN connected" with the timer and
 Disconnect → tap Disconnect. Upload it unlisted (e.g. YouTube) and paste the
 link.
 
