@@ -187,9 +187,13 @@ The app declares `FOREGROUND_SERVICE_SPECIAL_USE` for the VPN service
 > Connect and stops when the user disconnects or the connection ends.
 
 Video: record 20–30 s of the phone screen (Android's built-in screen recorder):
-tap Connect → accept the VPN dialog → pull down the notification shade to show
-"VPN connected" with Disconnect → tap Disconnect. Upload it unlisted (e.g.
-YouTube) and paste the link.
+tap Connect → **Allow** notifications → accept the VPN dialog → pull down the
+notification shade to show "VPN connected" (in the *Silent* section) with
+Disconnect → tap Disconnect. Upload it unlisted (e.g. YouTube) and paste the
+link.
+
+No notification? Notifications were denied earlier: Settings → Apps →
+Tunnelkey → Notifications → on (Android asks only twice, then stays silent).
 
 ### Permissions used (for your reference)
 | Permission | Reason shown to reviewers if asked |
