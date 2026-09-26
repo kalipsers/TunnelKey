@@ -1,0 +1,5 @@
+Prvé vydanie:
+• OpenVPN klient s prihlásením heslom + overovacím kódom (TOTP)
+• Nastavenie QR kódom s režimom jednej konfigurácie, kódmi 2FA v telefóne a odkazmi
+• Zámok odtlačkom/tvárou alebo silným 8-miestnym PIN kódom
+• Automatický nový pokus s ďalším kódom, keď server kód odmietne

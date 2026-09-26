@@ -1,0 +1,44 @@
+Tunnelkey is an open-source VPN client for OpenVPN servers protected with two-factor authentication. If your company VPN asks for your password followed by the 6-digit code from an authenticator app, Tunnelkey makes that a single tap.
+
+<b>Built for password + authenticator code</b>
+Many OpenVPN servers with a TOTP plugin expect the code glued to the password, for example "hunter2" + "123456" sent as "hunter2123456". Tunnelkey does this for you:
+• Turn on two-factor for a profile and choose whether the code goes after or before the password
+• Enter the 6- or 8-digit code in large, easy-to-hit boxes, or paste it
+• See exactly how it will be sent, without revealing your password
+• Profiles using OpenVPN's static-challenge are supported too
+
+<b>Set up by your administrator in one scan</b>
+Your IT team can prepare everything on the self-hosted Tunnelkey provisioning server and show you a QR code. Scan it and Tunnelkey switches to a clean, single-configuration mode:
+• The VPN profile, username and optional password are installed for you
+• With a provisioned 2FA secret the app generates the code itself – connecting needs no typing at all
+• If the server rejects a code at the edge of its 30-second window, Tunnelkey waits for the next code and retries automatically
+• Shortcuts to intranet sites, Remote Desktop computers (opens Microsoft's Windows App) and other apps sit right under the Connect button
+• Large profiles are split across several QR codes that can be scanned in any order
+
+<b>Locked down</b>
+• Stored passwords and 2FA secrets are encrypted with keys kept in the Android Keystore
+• A configuration that holds secrets must be locked with your fingerprint or face, or with an 8-digit PIN
+• Easy PINs are refused: repeats (11111111), runs (12345678), pairs (11223344), dates, keypad patterns
+• Wrong PINs cause growing delays, and the tenth erases the configuration
+• The app re-locks after 30 seconds in the background
+
+<b>Private by design</b>
+• No account, no analytics, no ads, no tracking
+• Tunnelkey does not run VPN servers: your traffic goes only to the server in your profile, operated by you or your organisation
+• Nothing is ever sent to the developer
+
+<b>Also a regular OpenVPN client</b>
+• Import any .ovpn profile from Files, email or the share menu
+• Certificate-only profiles, username/password profiles and saved passwords
+• Built on the proven OpenVPN 3 core with mbed TLS
+• Live connection status, traffic counters and a connection log for troubleshooting
+
+<b>How it uses the VPN</b>
+Tunnelkey uses Android's VpnService only to create the encrypted OpenVPN tunnel to the server you configured. It does not inspect, log, modify or redirect your traffic.
+
+<b>Open source</b>
+Tunnelkey is free software under the GNU AGPL v3. Source code for the Android and iOS apps and the provisioning server: https://github.com/kalipsers/TunnelKey
+
+Tunnelkey requires access to an OpenVPN server; it is not a VPN service on its own.
+
+"OpenVPN" is a registered trademark of OpenVPN Inc. Tunnelkey is an independent project and is not affiliated with or endorsed by OpenVPN Inc.

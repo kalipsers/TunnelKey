@@ -1,0 +1,1 @@
+Pripojenie k OpenVPN serverom, ktoré vyžadujú heslo + overovací kód (2FA).

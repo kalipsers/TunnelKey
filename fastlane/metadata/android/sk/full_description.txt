@@ -1,0 +1,44 @@
+Tunnelkey je open-source VPN klient pre OpenVPN servery chránené dvojfaktorovým overením. Ak vaša firemná VPN chce heslo a za ním 6-miestny kód z overovacej aplikácie, s Tunnelkey je to jedno ťuknutie.
+
+<b>Stavaný na heslo + overovací kód</b>
+Mnohé OpenVPN servery s TOTP pluginom očakávajú kód pripojený k heslu, napríklad „hunter2“ + „123456“ odoslané ako „hunter2123456“. Tunnelkey to urobí za vás:
+• Zapnite dvojfaktorové overenie pre profil a zvoľte, či kód ide za heslo alebo pred neho
+• Zadajte 6- alebo 8-miestny kód do veľkých políčok, alebo ho vložte zo schránky
+• Uvidíte presne, ako sa odošle – bez odhalenia hesla
+• Podporované sú aj profily so static-challenge
+
+<b>Nastavenie od správcu jedným skenovaním</b>
+Vaše IT oddelenie pripraví všetko na vlastnom provisioning serveri Tunnelkey a ukáže vám QR kód. Naskenujete ho a Tunnelkey sa prepne do prehľadného režimu jednej konfigurácie:
+• VPN profil, používateľské meno a voliteľne heslo sa nainštalujú automaticky
+• S 2FA tajomstvom od správcu si aplikácia generuje kód sama – pripojenie bez písania
+• Ak server odmietne kód na hrane 30-sekundového okna, Tunnelkey počká na ďalší kód a skúsi to znova
+• Odkazy na intranet, počítače cez Vzdialenú plochu (otvorí sa Windows App od Microsoftu) a ďalšie aplikácie sú hneď pod tlačidlom Pripojiť
+• Veľké profily sa rozdelia do viacerých QR kódov, ktoré možno skenovať v ľubovoľnom poradí
+
+<b>Zabezpečené</b>
+• Uložené heslá a 2FA tajomstvá sú šifrované kľúčmi v Android Keystore
+• Konfigurácia s tajnými údajmi musí byť zamknutá odtlačkom prsta, tvárou alebo 8-miestnym PIN kódom
+• Ľahké PIN kódy sú odmietnuté: opakovania (11111111), postupnosti (12345678), páry (11223344), dátumy, tvary na klávesnici
+• Nesprávne PIN kódy predlžujú čakanie a desiaty pokus konfiguráciu vymaže
+• Po 30 sekundách na pozadí sa aplikácia opäť zamkne
+
+<b>Súkromie od základu</b>
+• Žiadny účet, analytika, reklamy ani sledovanie
+• Tunnelkey neprevádzkuje VPN servery: vaša komunikácia ide len na server z vášho profilu, ktorý prevádzkujete vy alebo vaša organizácia
+• Vývojárovi sa nikdy nič neposiela
+
+<b>Aj bežný OpenVPN klient</b>
+• Import ľubovoľného .ovpn profilu zo Súborov, e-mailu alebo cez Zdieľať
+• Profily len s certifikátom, s menom a heslom aj s uloženým heslom
+• Postavené na overenom jadre OpenVPN 3 s mbed TLS
+• Stav pripojenia, počítadlá prenosu a záznam pripojenia na riešenie problémov
+
+<b>Ako využíva VPN</b>
+Tunnelkey používa Android VpnService výlučne na vytvorenie šifrovaného OpenVPN tunela na server, ktorý ste nastavili. Vašu komunikáciu nesleduje, nezaznamenáva, nemení ani nepresmerúva.
+
+<b>Open source</b>
+Tunnelkey je slobodný softvér pod licenciou GNU AGPL v3. Zdrojový kód aplikácií pre Android a iOS aj provisioning servera: https://github.com/kalipsers/TunnelKey
+
+Tunnelkey vyžaduje prístup k OpenVPN serveru; sám o sebe nie je VPN službou.
+
+„OpenVPN“ je registrovaná ochranná známka spoločnosti OpenVPN Inc. Tunnelkey je nezávislý projekt, ktorý nie je spojený so spoločnosťou OpenVPN Inc. ani ňou podporovaný.
