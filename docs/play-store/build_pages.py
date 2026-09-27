@@ -56,6 +56,7 @@ INDEX = """# Tunnelkey
 Open-source VPN client for OpenVPN servers that sign in with a password and an
 authenticator code, with a self-hosted provisioning server for organisations.
 
+- [Create setup codes](provision/) — runs entirely in your browser, nothing is uploaded
 - [Privacy policy](privacy-policy.html)
 - [Source code on GitHub](https://github.com/kalipsers/TunnelKey)
 - Contact: [develop@pro-it.sk](mailto:develop@pro-it.sk)
