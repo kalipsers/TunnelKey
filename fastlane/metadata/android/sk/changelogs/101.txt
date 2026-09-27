@@ -1,6 +1,8 @@
-Prvé vydanie:
+Novinky:
 • OpenVPN klient s prihlásením heslom + overovacím kódom (TOTP)
-• Nastavenie QR kódom s režimom jednej konfigurácie, kódmi 2FA v telefóne a odkazmi
+• Nastavenie QR kódom: režim jednej konfigurácie, 2FA kódy generované v telefóne, odkazy na intranet, Vzdialenú plochu a aplikácie
 • Zámok odtlačkom/tvárou alebo silným 8-miestnym PIN kódom
 • Automatický nový pokus s ďalším kódom, keď server kód odmietne
+• Import cez ľubovoľného správcu súborov, Zdieľať alebo zo schránky
+• Funguje so servermi, ktoré posielajú kompresiu (napr. UniFi)
 • Slovenčina a angličtina

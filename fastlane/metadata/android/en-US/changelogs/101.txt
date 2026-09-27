@@ -1,6 +1,8 @@
-First release:
+What's new:
 • OpenVPN client with password + authenticator code (TOTP) sign-in
-• Setup by QR code with single-configuration mode, on-device 2FA codes and links
+• Setup by QR code: single-configuration mode, 2FA codes generated on the phone, links to intranet, Remote Desktop and apps
 • Fingerprint/face or strong 8-digit PIN lock
 • Automatic retry with the next code when a code is rejected
+• Import from any file manager, the share menu or the clipboard
+• Works with servers that push compression (e.g. UniFi)
 • English and Slovak

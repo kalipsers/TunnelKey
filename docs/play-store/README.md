@@ -1,6 +1,9 @@
 # Publishing Tunnelkey on Google Play
 
 Everything needed for the Play Console, in the order the Console asks for it.
+
+**All store texts (both languages) are collected in one copy-paste page:
+[LISTING.md](LISTING.md).**
 Text marked **Copy** can be pasted as-is.
 
 | What | Where |
@@ -8,7 +11,7 @@ Text marked **Copy** can be pasted as-is.
 | Store texts (en-US, sk) | `fastlane/metadata/android/<locale>/` — `title.txt`, `short_description.txt`, `full_description.txt`, `changelogs/100.txt` |
 | App icon 512×512 | `fastlane/metadata/android/<locale>/images/icon.png` |
 | Feature graphic 1024×500 | `fastlane/metadata/android/<locale>/images/featureGraphic.png` |
-| Phone screenshots 1080×2160 (6) | `fastlane/metadata/android/<locale>/images/phoneScreenshots/1..6.png` |
+| Phone screenshots 1080×2160 (7) | `fastlane/metadata/android/<locale>/images/phoneScreenshots/1..7.png` |
 | Privacy policy | `docs/privacy-policy.md` → published as `https://kalipsers.github.io/TunnelKey/privacy-policy.html` |
 | Release bundle | `android/app/build/outputs/bundle/release/app-release.aab` |
 
@@ -238,6 +241,7 @@ cd android
 ./gradlew :app:testDebugUnitTest -PplayScreenshots --tests '*PlayStoreScreenshots*'
 ./gradlew :app:testDebugUnitTest -PplayScreenshots -PplayLocale=sk --tests '*PlayStoreScreenshots*'
 cd .. && python docs/play-store/make_graphics.py
+python docs/play-store/build_listing.py   # refresh LISTING.md after editing texts
 ```
 
 Screens are rendered from the real Compose UI with demo data

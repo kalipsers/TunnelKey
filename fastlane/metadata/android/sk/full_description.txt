@@ -8,7 +8,7 @@ Mnohé OpenVPN servery s TOTP pluginom očakávajú kód pripojený k heslu, nap
 • Podporované sú aj profily so static-challenge
 
 <b>Nastavenie od správcu jedným skenovaním</b>
-Vaše IT oddelenie pripraví všetko na vlastnom provisioning serveri Tunnelkey a ukáže vám QR kód. Naskenujete ho a Tunnelkey sa prepne do prehľadného režimu jednej konfigurácie:
+Vaše IT oddelenie pripraví všetko – na bezplatnej stránke Tunnelkey, ktorá beží celá v prehliadači, alebo na vlastnom serveri Tunnelkey – a ukáže vám QR kód. Naskenujete ho a Tunnelkey sa prepne do prehľadného režimu jednej konfigurácie:
 • VPN profil, používateľské meno a voliteľne heslo sa nainštalujú automaticky
 • S 2FA tajomstvom od správcu si aplikácia generuje kód sama – pripojenie bez písania
 • Ak server odmietne kód na hrane 30-sekundového okna, Tunnelkey počká na ďalší kód a skúsi to znova
@@ -28,7 +28,7 @@ Vaše IT oddelenie pripraví všetko na vlastnom provisioning serveri Tunnelkey 
 • Vývojárovi sa nikdy nič neposiela
 
 <b>Aj bežný OpenVPN klient</b>
-• Import ľubovoľného .ovpn profilu zo Súborov, e-mailu alebo cez Zdieľať
+• Import ľubovoľného .ovpn profilu cez správcu súborov, z e-mailu, cez Zdieľať alebo vložením textu
 • Profily len s certifikátom, s menom a heslom aj s uloženým heslom
 • Postavené na overenom jadre OpenVPN 3 s mbed TLS
 • Stav pripojenia, počítadlá prenosu a záznam pripojenia na riešenie problémov

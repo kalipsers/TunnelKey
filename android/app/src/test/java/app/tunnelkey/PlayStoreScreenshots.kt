@@ -22,6 +22,7 @@ import app.tunnelkey.provision.SetupPayload
 import app.tunnelkey.provision.SetupTotp
 import app.tunnelkey.security.PinResult
 import app.tunnelkey.ui.EditorForm
+import app.tunnelkey.ui.ImportSheet
 import app.tunnelkey.ui.SignInRequest
 import app.tunnelkey.ui.screens.EditorScreen
 import app.tunnelkey.ui.screens.HomeScreen
@@ -175,5 +176,18 @@ class PlayStoreScreenshots {
         for (d in listOf("3", "9", "1", "7", "4")) compose.onNode(hasText(d)).performClick()
         compose.waitForIdle()
         compose.onRoot().captureRoboImage("$dir/6_locked.png")
+    }
+
+    @Test fun s7_import() {
+        screen {
+            HomeScreen(
+                profiles = profiles, selected = profiles[0], status = TunnelStatus(),
+                onSelect = {}, onEdit = {}, onImport = {}, onScan = {}, onConnect = {}, onDisconnect = {},
+                onOpenLogs = {}, onAbout = {},
+            )
+            ImportSheet(onChooseFile = {}, onPaste = {}, onScan = {}, onDismiss = {})
+        }
+        compose.waitForIdle()
+        captureScreenRoboImage("$dir/7_import.png")
     }
 }

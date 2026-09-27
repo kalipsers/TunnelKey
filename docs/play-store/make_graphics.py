@@ -28,7 +28,7 @@ BRASS = (227, 169, 59)
 SLATE = (90, 107, 125)
 KEY = (245, 243, 238)
 
-SCREENS = ["1_connected", "2_sign_in", "3_profiles", "4_two_factor", "5_setup_code", "6_locked"]
+SCREENS = ["1_connected", "2_sign_in", "3_profiles", "4_two_factor", "5_setup_code", "6_locked", "7_import"]
 
 CAPTIONS = {
     "en-US": [
@@ -38,6 +38,7 @@ CAPTIONS = {
         ("Two-factor, per profile", "Code after or before the password, 6 or 8 digits."),
         ("Set up with one QR code", "Your admin sends the profile, sign-in and links in a single scan."),
         ("Locked with fingerprint or PIN", "Secrets never leave the phone. Weak PINs are refused."),
+        ("Add profiles your way", "From any file manager, the share menu, the clipboard or a QR code."),
     ],
     "sk": [
         ("Pripojenie jedným ťuknutím", "2FA kód sa vygeneruje priamo v telefóne. Nič neprepisujete."),
@@ -46,6 +47,7 @@ CAPTIONS = {
         ("Dvojfaktorové overenie", "Kód za heslom alebo pred ním, 6 alebo 8 číslic."),
         ("Nastavenie jedným QR kódom", "Správca pošle profil, prihlásenie aj odkazy v jednom skenovaní."),
         ("Zamknuté odtlačkom alebo PIN", "Tajné údaje neopustia telefón. Slabé PIN kódy sú odmietnuté."),
+        ("Pridajte profil po svojom", "Zo správcu súborov, cez Zdieľať, zo schránky alebo QR kódom."),
     ],
 }
 
